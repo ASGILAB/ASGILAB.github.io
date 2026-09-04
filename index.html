@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>ASGILAB</title>
+  <meta name="theme-color" content="#FF3B5C" />
+  <style>
+    :root {
+      --pink: #ff3b5c;
+      --orange: #ff7a18;
+      --yellow: #ffe14a;
+      --ink: #161018;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 10%, #ffe14a 0%, transparent 32%),
+        radial-gradient(circle at 90% 0%, #ff7a18 0%, transparent 36%),
+        linear-gradient(165deg, #ff3b5c 0%, #ff6b8a 42%, #ff9a3c 100%);
+      display: flex;
+      justify-content: center;
+      padding: 40px 18px 56px;
+    }
+    .wrap { width: 100%; max-width: 420px; }
+    .avatar {
+      width: 108px;
+      height: 108px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: #1a1a1a;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,.22);
+      position: relative;
+    }
+    .corners { position: absolute; inset: 14px; }
+    .corners span {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border: 3px solid #8d8d8d;
+    }
+    .corners span:nth-child(1) { top: 0; left: 0; border-right: 0; border-bottom: 0; border-radius: 4px 0 0 0; }
+    .corners span:nth-child(2) { top: 0; right: 0; border-left: 0; border-bottom: 0; border-radius: 0 4px 0 0; }
+    .corners span:nth-child(3) { bottom: 0; left: 0; border-right: 0; border-top: 0; border-radius: 0 0 0 4px; }
+    .corners span:nth-child(4) { bottom: 0; right: 0; border-left: 0; border-top: 0; border-radius: 0 0 4px 0; }
+    .apple {
+      width: 36px;
+      height: 42px;
+      background: #fff;
+      border-radius: 36% 36% 42% 42%;
+      position: relative;
+    }
+    .apple:before {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #1a1a1a;
+      border-radius: 50%;
+      top: 8px;
+      right: -1px;
+    }
+    .apple:after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 12px;
+      border: 3px solid #fff;
+      border-bottom: 0;
+      border-radius: 10px 10px 0 0;
+      top: -8px;
+      left: 18px;
+      transform: rotate(28deg);
+    }
+    h1 {
+      text-align: center;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      color: #fff;
+    }
+    .bio {
+      text-align: center;
+      color: rgba(255,255,255,.92);
+      font-size: 15px;
+      font-weight: 600;
+      margin: 6px 0 26px;
+    }
+    .links { display: grid; gap: 12px; }
+    a.btn {
+      display: block;
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--card);
+      border-radius: 18px;
+      padding: 16px 18px;
+      box-shadow: 0 8px 0 rgba(0,0,0,.12);
+      transition: transform .12s ease;
+    }
+    a.btn:active { transform: translateY(3px); box-shadow: 0 4px 0 rgba(0,0,0,.12); }
+    .name { display: block; font-size: 16px; font-weight: 800; }
+    .sub { display: block; margin-top: 3px; font-size: 13px; color: #6b5b63; font-weight: 500; }
+    .tag {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      background: var(--yellow);
+      color: var(--ink);
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 28px;
+      color: rgba(255,255,255,.8);
+      font-weight: 700;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="avatar" aria-hidden="true">
+      <div class="corners">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="apple"></div>
+    </div>
+    <h1>ASGILAB</h1>
+    <p class="bio">apps with a bit of bounce</p>
+
+    <nav class="links">
+      <a class="btn" href="https://apps.apple.com/app/vow-of-silence-monk-mode/id6801058062">
+        <span class="name">Vow of Silence: Monk Mode</span>
+        <span class="sub">Don’t talk for a while. On purpose.</span>
+        <span class="tag">App Store</span>
+      </a>
+
+      <a class="btn" href="https://apps.apple.com/app/reception-visitor-register/id6794656691">
+        <span class="name">Reception Visitor Register</span>
+        <span class="sub">Front-desk check-in</span>
+        <span class="tag">App Store</span>
+      </a>
+
+      <a class="btn" href="https://apps.apple.com/app/panel-files-file-manager/id6795570137">
+        <span class="name">Panel Files</span>
+        <span class="sub">Unzip, browse, organize</span>
+        <span class="tag">App Store</span>
+      </a>
+
+      <a class="btn" href="https://apps.apple.com/app/wardrobe-almanac/id6799170178">
+        <span class="name">Wardrobe Almanac</span>
+        <span class="sub">Outfits from your own clothes</span>
+        <span class="tag">App Store</span>
+      </a>
+
+      <a class="btn" href="https://bestfootballteaminthe.world" target="_blank" rel="noopener">
+        <span class="name">Best Football Team in the World</span>
+        <span class="sub">Pick the team. Argue later.</span>
+        <span class="tag">Web</span>
+      </a>
+
+      <a class="btn" href="https://www.outbid.co.in" target="_blank" rel="noopener">
+        <span class="name">Outbid</span>
+        <span class="sub">Outbid your competition</span>
+        <span class="tag">Web</span>
+      </a>
+    </nav>
+
+    <footer>ASGILAB</footer>
+  </main>
+</body>
+</html>
